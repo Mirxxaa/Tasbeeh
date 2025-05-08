@@ -46,6 +46,11 @@ const SignUp = () => {
     setIsSecuritySet(true); // Move to the security question page
   };
 
+  // Navigate to the Login page
+  const handleLoginPage = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <h2 className="text-xl font-bold mb-4">Register</h2>
@@ -82,7 +87,7 @@ const SignUp = () => {
           />
           <button
             onClick={handleSecurityQuestions}
-            className="bg-green-600 text-white px-4 py-2 rounded"
+            className="bg-green-600 text-white px-4 py-2 rounded mb-2"
           >
             Next: Set Security Questions
           </button>
@@ -105,12 +110,20 @@ const SignUp = () => {
           />
           <button
             onClick={handleSignUp}
-            className="bg-green-600 text-white px-4 py-2 rounded"
+            className="bg-green-600 text-white px-4 py-2 rounded mb-2"
           >
             Sign Up
           </button>
         </>
       )}
+
+      {/* Button to navigate to Login Page */}
+      <button
+        onClick={handleLoginPage}
+        className="text-blue-600 mt-4 cursor-pointer"
+      >
+        Already have an account? Login here
+      </button>
     </div>
   );
 };
